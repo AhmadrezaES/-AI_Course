@@ -17,10 +17,10 @@ while D == false
             break
         else
             z = successor(ST);
-            z = remove_repeated(z,States);
-            if isempty(z)
-                break
-            end
+            %z = remove_repeated(z,States);
+            %if isempty(z)
+            %    break
+            %end
             next_state = [next_state z];
             next_num = [next_num  i*ones(1,length(z))];
         end
@@ -33,12 +33,12 @@ while D == false
     end
 end
 
-gaol_raod = [];
+gaol_path = [];
 for i = length(States):-1:1
-    gaol_raod = [gaol_raod {States{i}{gaol_num}}];
+    gaol_path = [gaol_path {States{i}{gaol_num}}];
     gaol_num = Nums{i}(gaol_num);
 end
-z = gaol_raod;
+z = gaol_path;
             
         
     
